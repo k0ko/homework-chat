@@ -1,0 +1,57 @@
+.jumbotron {
+    background: url("../images/jumbotron-img.jpg") no-repeat;
+    background-size: cover;
+    min-height: 600px;
+}
+h2 {
+    position: relative;
+    margin: 30px 0 50px;
+    padding: 0 0 0 40px;
+}
+h2:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 8px;
+    height: 100%;
+    background: blue;
+}
+.carousel-inner {
+    max-width: calc(90% - 30px) !important;
+}
+.carousel-control-next,
+.carousel-control-prev {
+    width: 5%;
+    background: rgba(0, 0, 0, 0.7);
+}
+.carousel-inner .slide {
+    column-gap: 10px;
+}
+.carousel-inner .slide .d-flex {
+    column-gap: 5px;
+}
+.carousel-inner .slide .d-flex .card {
+    padding: 0;
+    max-width: 16.2%;
+}
+#latest-movies .row .d-flex {
+    padding-bottom: 15px;
+}
+#latest-movies .card:hover {
+    transition: 0.4s all;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#latest-movies .card .card-body {
+    position: relative;
+    padding-bottom: 50px;
+}
+#latest-movies .card .card-body .card-buttons {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;;
+}
