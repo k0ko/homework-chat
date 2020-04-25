@@ -14,8 +14,7 @@
         <script>
             function myFunction() {
                 var chatOpen = document.getElementById("chat");
-                var chatOpenClose = document.getElementById("btn-close").innerText = "_";
-                chatOpen.classList.add("collapse");
+                chatOpen.classList.toggle("collapse");
             }
         </script>
     </head>
@@ -28,7 +27,7 @@
                         <img src="assets/images/Alice.jpg" alt="Alice Marinova" />
                         <span class="chat-status"></span>
                     </a>
-                    <a href="#">Alice Marinova</a><a href="#" onclick="myFunction()" id="btn-close">x</a>
+                    <a href="#">Alice Marinova</a><a href="#" onclick="myFunction()" id="btn-close"></a>
                 </h2>
                 <div id="chat-content">
                     <div class="comment comment-position-left">
@@ -81,13 +80,13 @@
                             <time>before 1 mins</time>
                         </div>
                     </div>
-                    <div class="comment comment-position-right">
+                    <div class="comment comment-position-left">
                         <div class="comment-thumb">
                             <img src="assets/images/Nikolay.jpg" alt="Alice Marinova" />
                             <span class="chat-status online"></span>
                         </div>
                         <div class="comment-description">
-                            <p>Okay, please let me know when you are ready.</p>
+                            <p>Sure of course!</p>
                             <time>before 30 sec</time>
                         </div>
                     </div>

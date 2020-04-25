@@ -85,11 +85,60 @@ h1 {
 
 #chat h2 #btn-close {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 12px;
+    right: 8px;
     text-decoration: none;
     font-size: 18px;
+    width: 24px;
+    height: 24px;
     color: #fff;
+}
+#chat h2 #btn-close:before {
+    border-radius: 3px;
+    background: #fff;
+    height: 16px;
+    left: 10px;
+    top: 2px;
+    width: 2px;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    content: "";
+    outline: 0.1px solid transparent;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+}
+#chat h2 #btn-close:after {
+    border-radius: 3px;
+    background: #fff;
+    height: 16px;
+    left: 10px;
+    top: 2px;
+    width: 2px;
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    content: "";
+    outline: 0.1px solid transparent;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+}
+#chat.collapse #btn-close {
+    top: 16px;
+    right: 16px;
+    border: 1px solid #fff;
+    width: 16px;
+    height: 16px;
+}
+#chat.collapse #btn-close:before,
+#chat.collapse #btn-close:after {
+    display: none;
 }
 #chat h2:hover a,
 #chat h2:hover #btn-close {
