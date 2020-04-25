@@ -1,57 +1,178 @@
-.jumbotron {
-    background: url("../images/jumbotron-img.jpg") no-repeat;
-    background-size: cover;
-    min-height: 600px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-h2 {
+body {
+    font-family: Arial, Tahoma, Verdana, sans-serif;
     position: relative;
-    margin: 30px 0 50px;
-    padding: 0 0 0 40px;
 }
-h2:before {
+img {
+    max-width: 100%;
+}
+h1 {
+    margin: 60px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+#chat {
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    max-height: 360px;
+    padding: 48px 0;
+    background: #fff;
+    max-width: 280px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+#chat h2 {
+    margin: 0;
+    padding: 8px 36px 8px 12px;
+    min-height: 48px;
     position: absolute;
     top: 0;
     left: 0;
-    content: '';
-    width: 8px;
-    height: 100%;
-    background: blue;
+    z-index: 100;
+    width: 100%;
+    font-size: 14px;
+    color: #A1B6BF;
+    font-weight: 300;
+    background: #1C448E;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    line-height: 24px;
 }
-.carousel-inner {
-    max-width: calc(90% - 30px) !important;
-}
-.carousel-control-next,
-.carousel-control-prev {
-    width: 5%;
-    background: rgba(0, 0, 0, 0.7);
-}
-.carousel-inner .slide {
-    column-gap: 10px;
-}
-.carousel-inner .slide .d-flex {
-    column-gap: 5px;
-}
-.carousel-inner .slide .d-flex .card {
-    padding: 0;
-    max-width: 16.2%;
-}
-#latest-movies .row .d-flex {
-    padding-bottom: 15px;
-}
-#latest-movies .card:hover {
-    transition: 0.4s all;
-    transform: scale(1.02);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-#latest-movies .card .card-body {
+#chat h2 #chat-thumb {
     position: relative;
-    padding-bottom: 50px;
+    margin: 0 8px 0 0;
+    max-width: 32px;
+    max-height: 32px; 
 }
-#latest-movies .card .card-body .card-buttons {
+#chat h2 #chat-thumb img {
+    border-radius: 100%;
+}
+
+#chat h2:hover #chat-thumb img {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+.chat-status {
+    border-radius: 100%;
+    border: 1px solid #fff;
     position: absolute;
-    bottom: 25px;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    box-shadow: 0 0 3px inset rgba(0, 0, 0, 0.4);
+    background: gray;
+}
+.chat-status.online {
+    background: greenyellow;
+}
+#chat h2 a {
+    transition: 0.6s all;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    text-decoration: none;
+}
+
+#chat h2 #btn-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+}
+#chat h2:hover a,
+#chat h2:hover #btn-close {
+    color: #C0D6E8;
+}
+#chat #chat-content {
+    max-height: 286px;
+    padding: 10px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 15px;
+}
+.comment {
+    display: flex;
+    width: 100%;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.comment.comment-position-left {
+    flex-direction: row;
+}
+.comment.comment-position-right {
+    flex-direction: row-reverse;
+}
+.comment.comment-position-right .comment-description {
+    background: #508bcb;
+    color: #fff;
+}
+.comment .comment-thumb {
+    position: relative;
+    max-width: 32px;
+    max-height: 32px;
+}
+.comment .comment-thumb img {
+    border-radius: 100%;
+}
+.comment .comment-description {
+    margin: 0 0 20px;
+    width: calc(100% - 42px);
+    background: #cfdeee;
+    border-radius: 8px;
+    padding: 6px;
+    position: relative;
+    font-size: 13px;
+}
+.comment .comment-description time {
+    opacity: 0;
+    position: absolute;
+    bottom: -16px;
+    color: #666;
+    font-size: 11px;
+    transition: 0.4s all;
+}
+.comment .comment-description:hover time {
+    opacity: 1;
+}
+#chat #chat-box-form {
+    border-top: 1px solid #ccc;
+    position: absolute;
+    bottom: 0;
     left: 0;
     right: 0;
-    margin: 0 auto;
-    text-align: center;;
+    width: 100%;
+    padding: 4px;
+    display: flex;
+    background: #fff;
+}
+#chat #chat-box-form textarea {
+    vertical-align: middle;
+    border-radius: 8px;
+    border: 1px solid #6F8695;
+    padding: 0 12px;
+    max-height: 32px;
+    line-height: 32px;
+    width: 100%;
+    margin: 0 4px 0 0;
+}
+#chat #chat-box-form textarea:focus::placeholder {
+    color: transparent;
+}
+#chat #chat-box-form #btn-send {
+    vertical-align: middle;
+    border: 0;
+    border-radius: 8px;
+    background: #1C448E;
+    color: #fff;
+    padding: 8px 12px;
 }
