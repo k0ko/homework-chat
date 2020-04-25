@@ -28,6 +28,10 @@ h1 {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
+#chat.collapse {
+    height: 48px;
+    padding-bottom: 0;
+}
 #chat h2 {
     margin: 0;
     padding: 8px 36px 8px 12px;

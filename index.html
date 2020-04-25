@@ -13,7 +13,9 @@
         <title>Ignite Bootstrap Homework</title>
         <script>
             function myFunction() {
-                document.getElementById("chat").innerHTML = "";
+                var chatOpen = document.getElementById("chat");
+                var chatOpenClose = document.getElementById("btn-close").innerText = "_";
+                chatOpen.classList.add("collapse");
             }
         </script>
     </head>
